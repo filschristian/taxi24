@@ -49,7 +49,7 @@ You can import the copy of my Postman API end-points collection to save time!!!!
 
 https://documenter.getpostman.com/view/6005466/SW15xbNQ
 
-| Endpoint                                | Methods | Requirements | Functionalities                  |
+| Endpoint                                | Methods | Token        | Functionalities                  |
 | --------------------------------------- | ------- | ------------ | -------------------------------- |
 | /api/v1/drivers                         | GET     | No           | Get a list of all drivers        |
 | /api/v1/drivers?status=available        | GET     | No           | Get a list of available drivers  |
