@@ -4,7 +4,7 @@
   "description": "An API to manage a fleet of drivers and allocate passengers to drivers",
   "main": "index.js",
   "scripts": {
-    "db:seed": "node db.js createDB && node db.js createTables",
+    "db:seed": "node db.js createDB && node db.js createTables && node db.js seedDatabase",
     "db:destroy": "node db.js dropTables",
     "start": "nodemon --exec babel-node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

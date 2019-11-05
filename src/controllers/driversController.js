@@ -28,7 +28,7 @@ export default class DriversController {
 
   static async getCloseDrivers(req, res) {
     const { latitude, longitude } = req.query;
-    const { rows } = await driver.getAll();
+    const { rows } = await driver.getAllByStatus('available');
     const drivers = rows.filter((d) => {
       return calculateDistance(latitude, longitude, d.location[0], d.location[1]) < 3;
     });
