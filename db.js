@@ -81,13 +81,28 @@ const createTables = () => {
 const seedDatabase = () => {
   const queryText = `INSERT INTO drivers
                       (names, phone, email, location, status) 
-                      VALUES('chris', '078', 'chris@email.com', '{-1.956537, 30.063616}', 'available');
+                      VALUES
+                      ('chris1', '07888888881', 'chris1@email.com', '{-1.956537, 30.063616}', 'available'),
+                      ('chris2', '07888888882', 'chris2@email.com', '{-1.971142, 30.103683}', 'on duty'),
+                      ('chris3', '07888888883', 'chris3@email.com', '{-1.949549, 30.126161}', 'available'),
+                      ('chris4', '07888888884', 'chris4@email.com', '{-1.978963, 30.223335}', 'on duty'),
+                      ('chris5', '07888888885', 'chris5@email.com', '{-1.977940, 30.043773}', 'available');
                     INSERT INTO riders
                       (names, phone, email, location)
-                      VALUES('Rene', '078', 'rene@email.com', '{-1.947859, 30.059655}');
+                      VALUES
+                      ('Rene1', '0781111111', 'rene1@email.com', '{-1.977940, 30.043773}'),
+                      ('Rene2', '0781111112', 'rene2@email.com', '{-1.978963, 30.223335}'),
+                      ('Rene3', '0781111113', 'rene3@email.com', '{-1.947859, 30.059655}'),
+                      ('Rene4', '0781111114', 'rene4@email.com', '{-1.971142, 30.103683}'),
+                      ('Rene5', '0781111115', 'rene5@email.com', '{-1.956537, 30.063616}');
                     INSERT INTO trips
-                      (pickup, destination, cost, rider_id, driver_id)
-                      VALUES('Gikondo', 'Niboye', '2000', '1', '1');`;
+                      (pickup, destination, cost, status, rider_id, driver_id)
+                      VALUES
+                      ('Gikondo', 'Niboye', '2000', 'complete', '1', '1'),
+                      ('Kacyiru', 'Kagarama', NULL, 'active', '2', '2'),
+                      ('Biryogo', 'Gatsata', NULL, 'active', '3', '3'),
+                      ('Kanombe', 'Kabuga', '5000', 'complete', '4', '4'),
+                      ('Kicukiro', 'Gasabo', '6000', 'complete', '5', '5');`;
   pool.query(queryText)
     .then((res) => {
       console.log(res);

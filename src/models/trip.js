@@ -16,8 +16,11 @@ export default class Trip {
   }
 
   static async getAllActive() {
-    const queryString = `SELECT id, pickup, destination, rider_id AS "riderId", driver_id AS "driverId", status
-                        FROM trips WHERE status=$1`;
+    const queryString = `SELECT trips.id, trips.pickup, trips.destination, riders.names AS rider, drivers.names AS driver, trips.status
+                        FROM trips
+                        INNER JOIN riders ON riders.id = trips.rider_id
+                        INNER JOIN drivers ON drivers.id = trips.driver_id
+                        WHERE trips.status=$1`;
     const values = ['active'];
     try {
       return await db.query(queryString, values);

@@ -16,7 +16,7 @@ export const validateIdParam = (req, res, next) => {
 export const validateGetAllDrivers = (req, res, next) => {
   if (req.query) {
     const validationErrors = joi.validate(req.query, joi.object().keys({
-      status: joi.string().trim().valid(['available', 'busy']),
+      status: joi.string().trim().valid(['available', 'on duty']),
     }));
     if (validationErrors.error) {
       return res.status(400)
