@@ -8,31 +8,34 @@ A Mini Project to demonstrate software architecture, restfull design, quality of
 ## Prerequisites
 
 -   Install Node JS and NPM
-    if you don't know how, follow this link `https://nodejs.org/en/download/`
+    if you don't know how, follow this link https://nodejs.org/en/download/
 
--   Download and install POSTGRESQL database link: `https://www.postgresql.org/download/`
+-   Download and install POSTGRESQL database link: https://www.postgresql.org/download/
 
 -   Install a code editor in case you want to edit or change something.
 
 -   Install Postman to test the RestFull API endpoints.
 
-## Get Started
+## Getting Started
 
 -   Open your terminal
 -   Clone the repo: `git clone https://github.com/filschristian/taxi24.git`
--   Set up dev environment: `duplicate .env.example` (Note: you must have a `.env` file in your root directory )
+-   Create a DATABASE in POSTGRESQL `example of the DB name: taxi24`
+-   Set up dev environment: **duplicate .env.example** (Note: you must create a `.env` file in your root directory )
     ```
       PORT=5000
       PGHOST = localhost
       PGUSER = your_postgres_username
       PGPASSWORD = your_postgres_password
-      PGDATABASE = taxi24
+      PGDATABASE = your_postgres_database (ex: taxi24)
       PGPORT = 5432
     ```
--   Setup the above credentials in `.env` file
+-   Setup the above credentials in your `.env` file
 -   Install packages:`npm install`
--   Create DB, tables and seed data: `npm run db:seed`
--   Run the development server: `npm start`
+-   Create tables and seed data: `npm run db:seed`
+-   Run the production server: `npm start`
+
+Optional: Instead of using the production server you can run the development server using `npm run dev`
 
 ## NPM Scripts
 

@@ -4,9 +4,13 @@
   "description": "An API to manage a fleet of drivers and allocate passengers to drivers",
   "main": "index.js",
   "scripts": {
-    "db:seed": "node db.js createDB && node db.js createTables && node db.js seedDatabase",
+    "db:seed": "node db.js createTables && node db.js seedDatabase",
     "db:destroy": "node db.js dropTables",
-    "start": "nodemon --exec babel-node ./src/server.js",
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "build": "babel -d ./build ./src",
+    "prebuild": "rm -rf build/*",
+    "prestart": "npm run build",
+    "start": " npm run db:seed && NODE_ENV=production node ./build/server.js",
     "pretest": "npm run db:seed",
     "test": "NODE_ENV=test jest --testTimeout=10000 --coverage --verbose --detectOpenHandles",
     "coverage": "npm run pretest && jest --coverage && cat ./coverage/lcov.info | coveralls"
@@ -46,6 +50,7 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
     "prettier": "^1.18.2",
     "supertest": "^4.0.2"
   },

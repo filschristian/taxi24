@@ -23,6 +23,8 @@ branches:
 install:
     - npm install
 before_script:
+    - psql -c 'create database taxi24;' -U postgres
+    - psql -c "CREATE USER taxi24 WITH PASSWORD 'taxi24';" -U postgres
     - npm run db:seed
 script:
     - npm run test
