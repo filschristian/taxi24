@@ -17,8 +17,8 @@ app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to Taxi 24 API.'
 }));
 
-app.listen(port, () => {
-  console.log(`Server is running on PORT ${port}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => console.log(`Server is running on PORT:${port}...`));
+}
 
 export default app;

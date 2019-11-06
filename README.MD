@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/filschristian/taxi24/badge.svg?branch=master)](https://coveralls.io/github/filschristian/taxi24?branch=master)
+
 # Taxi 24 API
 
 A Mini Project to demonstrate software architecture, restfull design, quality of code and ability to model problems.
@@ -49,18 +51,18 @@ You can import the copy of my Postman API end-points collection to save time!!!!
 
 https://documenter.getpostman.com/view/6005466/SW15xbNQ
 
-| Endpoint                                | Methods | Token        | Functionalities                  |
-| --------------------------------------- | ------- | ------------ | -------------------------------- |
-| /api/v1/drivers                         | GET     | No           | Get a list of all drivers        |
-| /api/v1/drivers?status=available        | GET     | No           | Get a list of available drivers  |
-| /api/v1/drivers/suggestions             | GET     | No           | Get available drivers within 3km |
-| /api/v1/drivers/`<driverId>`            | GET     | No           | Get a specific driver by ID      |
-| /api/v1/trips                           | POST    | No           | Create a trip request            |
-| /api/v1/trips/`<tripId>`/complete       | PUT     | No           | Complete a trip                  |
-| /api/v1/trips/active                    | GET     | No           | Get all active trips             |
-| /api/v1/riders                          | GET     | No           | Get all riders                   |
-| /api/v1/riders/`<riderId>`/             | GET     | No           | Get a specific rider by ID       |
-| /api/v1/riders/`<riderId>`/closeDrivers | GET     | No           | Get 3 closest drivers            |
+| Endpoint                                | Methods | Token | Functionalities                  |
+| --------------------------------------- | ------- | ----- | -------------------------------- |
+| /api/v1/drivers                         | GET     | No    | Get a list of all drivers        |
+| /api/v1/drivers?status=available        | GET     | No    | Get a list of available drivers  |
+| /api/v1/drivers/suggestions             | GET     | No    | Get available drivers within 3km |
+| /api/v1/drivers/`<driverId>`            | GET     | No    | Get a specific driver by ID      |
+| /api/v1/trips                           | POST    | No    | Create a trip request            |
+| /api/v1/trips/`<tripId>`/complete       | PUT     | No    | Complete a trip                  |
+| /api/v1/trips/active                    | GET     | No    | Get all active trips             |
+| /api/v1/riders                          | GET     | No    | Get all riders                   |
+| /api/v1/riders/`<riderId>`/             | GET     | No    | Get a specific rider by ID       |
+| /api/v1/riders/`<riderId>`/closeDrivers | GET     | No    | Get 3 closest drivers            |
 
 ### Requirements:
 
