@@ -1,10 +1,6 @@
 import joi from 'joi';
 
 export const validateIdParam = (req, res, next) => {
-  if (!req.params.id) {
-    return res.status(400)
-      .send({ message: 'Your request is missing id parameter' });
-  }
   const validationErrors = joi.validate(req.params.id, joi.number().integer());
   if (validationErrors.error) {
     return res.status(400)
@@ -14,7 +10,7 @@ export const validateIdParam = (req, res, next) => {
 };
 
 export const validateGetAllDrivers = (req, res, next) => {
-  if (req.query) {
+  if (req.query.status) {
     const validationErrors = joi.validate(req.query, joi.object().keys({
       status: joi.string().trim().valid(['available', 'on duty']),
     }));

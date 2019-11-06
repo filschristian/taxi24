@@ -1,0 +1,30 @@
+sudo: false
+services:
+    - postgresql
+addons:
+    postgresql: '9.5'
+env:
+    global:
+        - PGHOST = localhost
+        - PGUSER = postgres
+        - PGPASSWORD = postgres
+        - PGDATABASE = taxi24
+        - PGPORT = 5432
+        - NODE_ENV = test
+language: node_js
+node_js:
+    - '10.15.1'
+cache:
+    directories:
+        - node_modules
+branches:
+    only:
+        - master
+install:
+    - npm install
+before_script:
+    - npm run db:seed
+script:
+    - npm run test
+after_success:
+    - npm run coverage
