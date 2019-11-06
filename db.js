@@ -21,25 +21,6 @@ pool.on('connect', () => {
   console.log('connected to the db');
 });
 
-const createDB = () => {
-  const queryText = 'CREATE DATABASE taxi24;';
-  new Pool({
-    user: process.env.PGUSER,
-    host: process.env.PGHOST,
-    port: process.env.PGPORT,
-    database: process.env.PGUSER,
-    password: process.env.PGPASSWORD,
-  }).query(queryText)
-    .then((res) => {
-      console.log(res);
-      pool.end();
-    })
-    .catch((err) => {
-      console.log(err);
-      pool.end();
-    });
-};
-
 const createTables = () => {
   const queryText = `CREATE TABLE IF NOT EXISTS
       drivers(
@@ -140,7 +121,6 @@ pool.on('remove', () => {
 module.exports = {
   createTables,
   dropTables,
-  createDB,
   seedDatabase
 };
 
