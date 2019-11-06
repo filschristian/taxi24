@@ -75,7 +75,7 @@ describe('tripsRoutes', () => {
 
   it('should get trip already completed', async () => {
     const res = await request(app)
-      .put('/api/v1/trips/2/complete')
+      .put('/api/v1/trips/1/complete')
       .send({
         cost: 4000
       });
