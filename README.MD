@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/filschristian/taxi24.svg?branch=master)](https://travis-ci.org/filschristian/taxi24)
 [![Coverage Status](https://coveralls.io/repos/github/filschristian/taxi24/badge.svg?branch=master)](https://coveralls.io/github/filschristian/taxi24?branch=master)
 
 # Taxi 24 API
