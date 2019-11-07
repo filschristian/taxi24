@@ -29,14 +29,14 @@ describe('Get all drivers', () => {
     const res = await request(app)
       .get('/api/v1/drivers?status=busy');
     expect(res.statusCode).toEqual(400);
-    expect(res.body).toHaveProperty('errors');
+    expect(res.body).toHaveProperty('error');
   });
 
   it('should get bad request because of missing parameters', async () => {
     const res = await request(app)
       .get('/api/v1/drivers/suggestions');
     expect(res.statusCode).toEqual(400);
-    expect(res.body).toHaveProperty('errors');
+    expect(res.body).toHaveProperty('error');
   });
 
   it('should get drivers suggestions within 3km', async () => {
@@ -72,6 +72,6 @@ describe('Get all drivers', () => {
     const res = await request(app)
       .get('/api/v1/drivers/hello');
     expect(res.statusCode).toEqual(400);
-    expect(res.body).toHaveProperty('errors');
+    expect(res.body).toHaveProperty('error');
   });
 });

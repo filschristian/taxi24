@@ -24,7 +24,7 @@ describe('tripsRoutes', () => {
     const res = await request(app)
       .post('/api/v1/trips');
     expect(res.statusCode).toEqual(400);
-    expect(res.body).toHaveProperty('errors');
+    expect(res.body).toHaveProperty('error');
   });
 
   it('should return errors', async () => {
@@ -100,6 +100,6 @@ describe('tripsRoutes', () => {
         cost: 'Kigali'
       });
     expect(res.statusCode).toEqual(400);
-    expect(res.body).toHaveProperty('errors');
+    expect(res.body).toHaveProperty('error');
   });
 });
